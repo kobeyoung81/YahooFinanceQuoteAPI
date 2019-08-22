@@ -1,10 +1,9 @@
-# YahooFinance.Quote.Model.QuoteResponseContent
+# YahooFinance.Quote.Model.QuoteList
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**QuoteResponse** | [**QuoteResponseContentQuoteResponse**](QuoteResponseContentQuoteResponse.md) |  | [optional] 
-**Error** | **string** |  | [optional] 
+**Result** | [**List&lt;YahooQuote&gt;**](YahooQuote.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

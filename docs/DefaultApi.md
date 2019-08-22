@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="getquote"></a>
 # **GetQuote**
-> QuoteResponseContent GetQuote (string symbols)
+> QuoteContent GetQuote (string symbols)
 
 get quote for symbol
 
@@ -34,7 +34,7 @@ namespace Example
             try
             {
                 // get quote for symbol
-                QuoteResponseContent result = apiInstance.GetQuote(symbols);
+                QuoteContent result = apiInstance.GetQuote(symbols);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QuoteResponseContent**](QuoteResponseContent.md)
+[**QuoteContent**](QuoteContent.md)
 
 ### Authorization
 

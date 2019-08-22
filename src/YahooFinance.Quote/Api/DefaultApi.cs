@@ -31,8 +31,8 @@ namespace YahooFinance.Quote.Api
         /// </remarks>
         /// <exception cref="YahooFinance.Quote.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">pass an optional search string for looking up inventory</param>
-        /// <returns>QuoteResponseContent</returns>
-        QuoteResponseContent GetQuote (string symbols);
+        /// <returns>QuoteContent</returns>
+        QuoteContent GetQuote (string symbols);
 
         /// <summary>
         /// get quote for symbol
@@ -42,8 +42,8 @@ namespace YahooFinance.Quote.Api
         /// </remarks>
         /// <exception cref="YahooFinance.Quote.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">pass an optional search string for looking up inventory</param>
-        /// <returns>ApiResponse of QuoteResponseContent</returns>
-        ApiResponse<QuoteResponseContent> GetQuoteWithHttpInfo (string symbols);
+        /// <returns>ApiResponse of QuoteContent</returns>
+        ApiResponse<QuoteContent> GetQuoteWithHttpInfo (string symbols);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -54,8 +54,8 @@ namespace YahooFinance.Quote.Api
         /// </remarks>
         /// <exception cref="YahooFinance.Quote.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">pass an optional search string for looking up inventory</param>
-        /// <returns>Task of QuoteResponseContent</returns>
-        System.Threading.Tasks.Task<QuoteResponseContent> GetQuoteAsync (string symbols);
+        /// <returns>Task of QuoteContent</returns>
+        System.Threading.Tasks.Task<QuoteContent> GetQuoteAsync (string symbols);
 
         /// <summary>
         /// get quote for symbol
@@ -65,8 +65,8 @@ namespace YahooFinance.Quote.Api
         /// </remarks>
         /// <exception cref="YahooFinance.Quote.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">pass an optional search string for looking up inventory</param>
-        /// <returns>Task of ApiResponse (QuoteResponseContent)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QuoteResponseContent>> GetQuoteAsyncWithHttpInfo (string symbols);
+        /// <returns>Task of ApiResponse (QuoteContent)</returns>
+        System.Threading.Tasks.Task<ApiResponse<QuoteContent>> GetQuoteAsyncWithHttpInfo (string symbols);
         #endregion Asynchronous Operations
     }
 
@@ -183,10 +183,10 @@ namespace YahooFinance.Quote.Api
         /// </summary>
         /// <exception cref="YahooFinance.Quote.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">pass an optional search string for looking up inventory</param>
-        /// <returns>QuoteResponseContent</returns>
-        public QuoteResponseContent GetQuote (string symbols)
+        /// <returns>QuoteContent</returns>
+        public QuoteContent GetQuote (string symbols)
         {
-             ApiResponse<QuoteResponseContent> localVarResponse = GetQuoteWithHttpInfo(symbols);
+             ApiResponse<QuoteContent> localVarResponse = GetQuoteWithHttpInfo(symbols);
              return localVarResponse.Data;
         }
 
@@ -195,8 +195,8 @@ namespace YahooFinance.Quote.Api
         /// </summary>
         /// <exception cref="YahooFinance.Quote.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">pass an optional search string for looking up inventory</param>
-        /// <returns>ApiResponse of QuoteResponseContent</returns>
-        public ApiResponse< QuoteResponseContent > GetQuoteWithHttpInfo (string symbols)
+        /// <returns>ApiResponse of QuoteContent</returns>
+        public ApiResponse< QuoteContent > GetQuoteWithHttpInfo (string symbols)
         {
             // verify the required parameter 'symbols' is set
             if (symbols == null)
@@ -238,9 +238,9 @@ namespace YahooFinance.Quote.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<QuoteResponseContent>(localVarStatusCode,
+            return new ApiResponse<QuoteContent>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
-                (QuoteResponseContent) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QuoteResponseContent)));
+                (QuoteContent) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QuoteContent)));
         }
 
         /// <summary>
@@ -248,10 +248,10 @@ namespace YahooFinance.Quote.Api
         /// </summary>
         /// <exception cref="YahooFinance.Quote.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">pass an optional search string for looking up inventory</param>
-        /// <returns>Task of QuoteResponseContent</returns>
-        public async System.Threading.Tasks.Task<QuoteResponseContent> GetQuoteAsync (string symbols)
+        /// <returns>Task of QuoteContent</returns>
+        public async System.Threading.Tasks.Task<QuoteContent> GetQuoteAsync (string symbols)
         {
-             ApiResponse<QuoteResponseContent> localVarResponse = await GetQuoteAsyncWithHttpInfo(symbols);
+             ApiResponse<QuoteContent> localVarResponse = await GetQuoteAsyncWithHttpInfo(symbols);
              return localVarResponse.Data;
 
         }
@@ -261,8 +261,8 @@ namespace YahooFinance.Quote.Api
         /// </summary>
         /// <exception cref="YahooFinance.Quote.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">pass an optional search string for looking up inventory</param>
-        /// <returns>Task of ApiResponse (QuoteResponseContent)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<QuoteResponseContent>> GetQuoteAsyncWithHttpInfo (string symbols)
+        /// <returns>Task of ApiResponse (QuoteContent)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<QuoteContent>> GetQuoteAsyncWithHttpInfo (string symbols)
         {
             // verify the required parameter 'symbols' is set
             if (symbols == null)
@@ -304,9 +304,9 @@ namespace YahooFinance.Quote.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<QuoteResponseContent>(localVarStatusCode,
+            return new ApiResponse<QuoteContent>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
-                (QuoteResponseContent) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QuoteResponseContent)));
+                (QuoteContent) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QuoteContent)));
         }
 
     }

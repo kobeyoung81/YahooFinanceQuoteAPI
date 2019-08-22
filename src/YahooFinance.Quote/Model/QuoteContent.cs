@@ -22,25 +22,33 @@ using SwaggerDateConverter = YahooFinance.Quote.Client.SwaggerDateConverter;
 namespace YahooFinance.Quote.Model
 {
     /// <summary>
-    /// QuoteResponseContentQuoteResponse
+    /// QuoteContent
     /// </summary>
     [DataContract]
-        public partial class QuoteResponseContentQuoteResponse :  IEquatable<QuoteResponseContentQuoteResponse>
+        public partial class QuoteContent :  IEquatable<QuoteContent>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="QuoteResponseContentQuoteResponse" /> class.
+        /// Initializes a new instance of the <see cref="QuoteContent" /> class.
         /// </summary>
-        /// <param name="result">result.</param>
-        public QuoteResponseContentQuoteResponse(List<YahooQuote> result = default(List<YahooQuote>))
+        /// <param name="quoteResponse">quoteResponse.</param>
+        /// <param name="error">error.</param>
+        public QuoteContent(QuoteList quoteResponse = default(QuoteList), string error = default(string))
         {
-            this.Result = result;
+            this.QuoteResponse = quoteResponse;
+            this.Error = error;
         }
         
         /// <summary>
-        /// Gets or Sets Result
+        /// Gets or Sets QuoteResponse
         /// </summary>
-        [DataMember(Name="result", EmitDefaultValue=false)]
-        public List<YahooQuote> Result { get; set; }
+        [DataMember(Name="quoteResponse", EmitDefaultValue=false)]
+        public QuoteList QuoteResponse { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Error
+        /// </summary>
+        [DataMember(Name="error", EmitDefaultValue=false)]
+        public string Error { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -49,8 +57,9 @@ namespace YahooFinance.Quote.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class QuoteResponseContentQuoteResponse {\n");
-            sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("class QuoteContent {\n");
+            sb.Append("  QuoteResponse: ").Append(QuoteResponse).Append("\n");
+            sb.Append("  Error: ").Append(Error).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -71,25 +80,29 @@ namespace YahooFinance.Quote.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as QuoteResponseContentQuoteResponse);
+            return this.Equals(input as QuoteContent);
         }
 
         /// <summary>
-        /// Returns true if QuoteResponseContentQuoteResponse instances are equal
+        /// Returns true if QuoteContent instances are equal
         /// </summary>
-        /// <param name="input">Instance of QuoteResponseContentQuoteResponse to be compared</param>
+        /// <param name="input">Instance of QuoteContent to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(QuoteResponseContentQuoteResponse input)
+        public bool Equals(QuoteContent input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Result == input.Result ||
-                    this.Result != null &&
-                    input.Result != null &&
-                    this.Result.SequenceEqual(input.Result)
+                    this.QuoteResponse == input.QuoteResponse ||
+                    (this.QuoteResponse != null &&
+                    this.QuoteResponse.Equals(input.QuoteResponse))
+                ) && 
+                (
+                    this.Error == input.Error ||
+                    (this.Error != null &&
+                    this.Error.Equals(input.Error))
                 );
         }
 
@@ -102,8 +115,10 @@ namespace YahooFinance.Quote.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.QuoteResponse != null)
+                    hashCode = hashCode * 59 + this.QuoteResponse.GetHashCode();
+                if (this.Error != null)
+                    hashCode = hashCode * 59 + this.Error.GetHashCode();
                 return hashCode;
             }
         }

@@ -53,7 +53,7 @@ namespace Example
             try
             {
                 // get quote for symbol
-                QuoteResponseContent result = apiInstance.GetQuote(symbols);
+                QuoteContent result = apiInstance.GetQuote(symbols);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -77,8 +77,8 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
- - [Model.QuoteResponseContent](docs/QuoteResponseContent.md)
- - [Model.QuoteResponseContentQuoteResponse](docs/QuoteResponseContentQuoteResponse.md)
+ - [Model.QuoteContent](docs/QuoteContent.md)
+ - [Model.QuoteList](docs/QuoteList.md)
  - [Model.YahooQuote](docs/YahooQuote.md)
 
 <a name="documentation-for-authorization"></a>
