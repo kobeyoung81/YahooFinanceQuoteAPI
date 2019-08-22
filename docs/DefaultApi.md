@@ -1,4 +1,4 @@
-# IO.Swagger.Api.DefaultApi
+# YahooFinance.Quote.Api.DefaultApi
 
 All URIs are relative to *https://query1.finance.yahoo.com/v7/finance*
 
@@ -18,9 +18,9 @@ By passing in the appropriate options, you can search for available inventory in
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using YahooFinance.Quote.Api;
+using YahooFinance.Quote.Client;
+using YahooFinance.Quote.Model;
 
 namespace Example
 {

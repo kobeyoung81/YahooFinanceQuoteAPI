@@ -1,4 +1,4 @@
-# IO.Swagger.Model.QuoteResponseContentQuoteResponse
+# YahooFinance.Quote.Model.QuoteResponseContentQuoteResponse
 ## Properties
 
 Name | Type | Description | Notes
